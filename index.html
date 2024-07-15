@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME PAGE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+    <main class="bg-body-secondary">
+
+
+        <div class="p-4">
+            <form class="g-3 p-5">
+                <div>
+                    <div class="row">
+                        <legend>ESTATURA </legend>
+                        <label for="validationDefault01" class="form-label">EN CENTÍMETROS</label>
+                        <input type="text" class="form-control" id="validationDefault01" value=""
+                            placeholder="EJ: 170" required>
+                    </div>
+                    <div class="row">
+                        <legend>PESO </legend>
+                        <label for="validationDefault02" class="form-label">EN KILOS</label>
+                        <input type="text" class="form-control" id="validationDefault02" value=""
+                            placeholder="EJ: 75" required>
+                    </div>
+    
+                    <div class="row">
+                        <label for="exampleFormControlInput3" class="form-label">TU INDICE DE MASA MUSCULAR ES:</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput3"
+                            placeholder="" disabled readonly>
+                    </div>
+    
+                </div>
+                <div class="col-12 d-flex justify-content-end mt-5">
+                    <button class="btn btn-success" type="submit" id="calcular">CALCULAR</button>
+                </div>
+            </form>
+
+            <form class="g-3 p-5">
+                <div>
+                    <div class="row">
+                        <label for="validationDefault04" class="form-label">DOLAR</label>
+                        <input type="text" class="form-control" id="validationDefault04" value=""
+                            placeholder="$" required>
+                    </div>
+                    <div class="row">
+                        <label for="validationDefault5" class="form-label">PESO MEXICANO</label>
+                        <input type="text" class="form-control" id="validationDefault05" value=""
+                            placeholder="$" required>
+                    </div>
+    
+                </div>
+
+            </form>
+
+            <form class="g-3 p-4 "id="colors">
+
+                    <legend>Nueva Nota</legend>
+                    <div class="p-3">
+                        <div class="row">
+                            <input type="text" class="form-control" id="titulos" value=""
+                                placeholder="TITULO" required>
+                        </div>
+                    </div>
+                    <div class="mb-4 p-1">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" value="" placeholder="Escriba su nota aqui" required ></textarea>
+                      </div>
+       
+                <div class="col-12 d-flex justify-content-center mt-5">
+                    <button class="btn btn-success me-3 cajas" type="submit" id="guardar">Guardar</button>
+                    <button class="btn btn-danger cajas" type="submit" id="borrar">Reset</button>
+                </div>
+            </form>
+
+
+            </div>
+         
+    
+            <div class="container-fluid d-flex flex-wrap justify-content-center m-5" id="tarjetas">
+                
+                <div class="card" style="width: 18rem;"> 
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                          <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
+                          <label class="form-check-label" for="firstCheckbox">First checkbox</label>
+                        </li>
+                      </ul>
+                    <div class="card-body">
+                        <p class="card-text">Enjoy your favorite dishes from different countries in a unique event for
+                            the whole family.</p>
+                        <div class="d-flex justify-content-evenly">
+
+                            <a href="./pages/details.html" class="btn btn-danger">Borrar nota.</a>
+                        </div>
+                    </div>
+                </div>
+
+
+        </div>
+
+
+
+
+
+
+
+
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+<script src="./index.js"></script>
+</body>
+
+</html>

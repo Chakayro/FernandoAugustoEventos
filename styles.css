@@ -1,0 +1,55 @@
+.navbar{
+    margin: 0px;
+    padding: 0px;
+}main{
+    min-height: 100vh;
+}
+
+.bannerClass{
+    height: 150px;
+    object-fit: cover;
+    
+}
+.cajas{
+   width: 200px;
+   height: 50px;
+}
+
+#colors{
+    background-color: rgb(100, 52, 145);
+}
+.card{
+    margin:4px;
+}
+
+.card-body>p{
+    height: 5rem;
+}
+
+@media (min-width: 993px) { 
+    #listaNav{
+        position: absolute;
+         right: 6px;
+         display: flex;
+         justify-content: space-between;
+    }
+
+    #animado1{
+        opacity: 0;
+    }
+    #animado1:hover{
+        opacity: 100;
+     }
+     
+
+}
+
+
+@media (min-width: 93px) { 
+    .position-absolute{
+        top: 0;
+        margin-top: 11px;
+     }    
+
+    
+}

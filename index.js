@@ -51,26 +51,30 @@ calcular.addEventListener("click", (e) => {
   
 
   let tarjeta = document.getElementsByClassName("card");
-  let copia = tarjeta[0];
-  let num = 1
+  let tarjeta1 = tarjeta[0];
+  let tarjeta2 = tarjeta[1];
+  let primera  = tarjeta[2];
+  let num =2
   let toggle = false
+  let pruebs = false
 
-  while (num === 1) {
-    num++
-    let copia2 = copia.cloneNode(true);
-    let nuevasTarjetas = copia2;
-    nuevasTarjetas.querySelector("h5").innerHTML = "Tercera nota";
-    nuevasTarjetas.querySelector("ol").remove();
-    nuevasTarjetas.querySelector("button").removeAttribute("disabled");
-    let parrafo = document.createElement('p')
-    parrafo.setAttribute("class", "card-text")
-    nuevasTarjetas.querySelector(".pb-4").appendChild(parrafo).innerHTML = "que tal";
-    copia = nuevasTarjetas;
-    console.log("hola");
+  
+  let tarjetasArray = [
+{id: 0, titulo: "Primera nota", texto: "Esta es otra nota de prueba El boton de Borrar nota esta deshabilitado EL boton ID # es un checkbox", realizado: false},
+{id: 1, titulo: "Segunda nota", texto: "Esta es otra nota de prueba El boton de Borrar nota esta deshabilitado EL boton ID # es un checkbox", realizado: false},
+  ]
 
+  while (tarjeta.length > 0) {
+    tarjeta[0].parentNode.removeChild(tarjeta[0]);
   }
 
-  console.log(copia);
+  do {
+    let copia2 = tarjeta1.cloneNode(true);
+    let nuevasTarjetas = document.getElementById("tarjetas").appendChild(copia2); 
+    copia2= tarjeta2.cloneNode(true);
+    nuevasTarjetas = document.getElementById("tarjetas").appendChild(copia2);
+  } while (tarjeta.length === 0);
+
 
   let crearForm = document.getElementById("guardar");
   crearForm.addEventListener("click", (e) => {
@@ -80,7 +84,7 @@ calcular.addEventListener("click", (e) => {
     if (titulo === "" || texto === "") {
       alert("Debe completar todos los campos");
     } else {
-      let copia2 = copia.cloneNode(true);
+      let copia2 = primera.cloneNode(true);
       let nuevasTarjetas = document.getElementById("tarjetas").appendChild(copia2); 
       nuevasTarjetas.setAttribute("id", num);
       nuevasTarjetas.querySelector("h5").innerHTML = titulo;
@@ -90,17 +94,23 @@ calcular.addEventListener("click", (e) => {
       nuevasTarjetas.querySelector("label").innerHTML = num;
         let reseTitulo = document.getElementById("titulos").value = "";
         let reseTextoa = document.getElementById("exampleFormControlTextarea1").value = "";
-        console.log(nuevasTarjetas);
         num++
     }
   });
 
-  let rayarTitulo = document.getElementsByClassName("card");
-  for (let i = 0; i < rayarTitulo.length; i++) {
 
-    rayarTitulo[i].addEventListener("click", (e) => {
-      let titulo = e.target.closest(".card").querySelector(".toggle");
-      titulo.classList.toggle("rayado");
-      console.log("rayado");
-    });
-  }
+
+  let cheboxSubrayarTexto = document.getElementById("tarjetas");
+  cheboxSubrayarTexto.addEventListener("click", (e) => {
+    let check = e.target;
+    if (check.type === "checkbox") {
+      let tarjeta = check.parentElement.parentElement.parentElement.parentElement;
+      tarjeta.querySelector("h5").classList.toggle("text-decoration-line-through");
+      if (tarjeta.querySelector("p")) {
+        tarjeta.querySelector("p").classList.toggle("text-decoration-line-through");
+      } else {   
+        tarjeta.querySelector("ol").classList.toggle("text-decoration-line-through");
+      }
+    }
+  });
+
